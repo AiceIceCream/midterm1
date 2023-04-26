@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="contents">
+            <p><u>Product Details</u></p>
+            <img src="Nike.png" alt="Nike Shoes">
+            <p>Nike Men's Lebron Witness 7 EP Basketball Shoes</p>
+            <h4>₱4236.00</h2>
+            <h5>Shipping To:<span>Cagayan de Oro City</span></h5>
+            <h5>Shipping Fee:<span>₱50</span></h5>
+            <label>Quantity:</label>
+            <button id="add" onclick="getadd()">+</button><button id="minus" onclick="getmin()">-</button>
+            <p id="Quantity">1</p>
+        </div>
+    </div>
+
+    <div id="wrapper2">
+        <div id="Details">
+            <p>Sub Total: ₱<span id="sub_total"></span></p>
+            <p>Quantity: <span id="quantity"></span></p>
+            <p>Shipping Fee: ₱<span id="ship"></span>50</p>
+            <p>Total: ₱<span id="total"></span></p>
+            <button id="check" onclick="order()">CHECKOUT</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
