@@ -2,191 +2,66 @@ function product(){
     location.assign("product.html");
 }
 
-let quan = 0;
+let quant = 0;
+let subTotal = 0;
+let ship = 50;
+let total = 0;
+let qty = 0;
+let total_check = 0;
 
-function getadd(){
-    quan += 1;
-    document.getElementById("Quantity").innerHTML = quan;
+function addQuantity(){
+    quant = quant + 1;
+    subTotal = subTotal + 4236;
+    total = subTotal + ship;
 
-    var price = 4236;
-    let total = 0;
+    document.getElementById("Quantity").innerHTML = quant;
+    document.getElementById("quantity").innerHTML = quant;
+    document.getElementById("sub_total").innerHTML = subTotal;
+    document.getElementById("total").innerHTML = total;
 
-    if(quan == 1){
-        document.getElementById("sub_total").innerHTML = price;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = price + 50;
+    if(quant > 10){
+        alert("Limit Reach!");
+        quant = 10;
+        subTotal = 42360;
+        total =42410;
 
-
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
+        document.getElementById("Quantity").innerHTML = quant;
+        document.getElementById("quantity").innerHTML = quant;
+        document.getElementById("sub_total").innerHTML = subTotal;
+        document.getElementById("total").innerHTML = total;
     }
-
-    else if(quan == 2){
-        document.getElementById("sub_total").innerHTML = price * 2;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 3){
-        document.getElementById("sub_total").innerHTML = price * 3;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 4){
-        document.getElementById("sub_total").innerHTML = price * 4;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 5){
-        document.getElementById("sub_total").innerHTML = price * 5;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 6){
-        document.getElementById("sub_total").innerHTML = price * 6;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 7){
-        document.getElementById("sub_total").innerHTML = price * 7;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 8){
-        document.getElementById("sub_total").innerHTML = price * 8;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 9){
-        document.getElementById("sub_total").innerHTML = price * 9;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan == 10){
-        document.getElementById("sub_total").innerHTML = price * 10;
-        document.getElementById("quantity").innerHTML = quan;
-        total = document.getElementById("total").innerHTML = (quan * price) + 50;
-
-        document.getElementById("total_quantity").innerHTML = quan;
-        document.getElementById("value").innerHTML = total;
-    }
-
-    else if(quan > 10)
-    {
-        window.alert("Maximum Reach");
-        document.getElementById("Quantity").innerHTML = 1;
-        document.getElementById("sub_total").innerHTML = 4236;
-        document.getElementById("quantity").innerHTML = 1;
-        document.getElementById("total").innerHTML = price +50;
-    }
-    
-
 }
 
-function getmin(){
-    quan -= 1;
-    document.getElementById("Quantity").innerHTML = quan;
-    
+function minQuantity(){
+    quant = quant - 1;
+    subTotal = subTotal - 4236;
+    total = total - 4236;
 
-    if(quan == 1){
-        document.getElementById("sub_total").innerHTML = ( - price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = price + 50;
-    }
+    document.getElementById("Quantity").innerHTML = quant;
+    document.getElementById("quantity").innerHTML = quant;
+    document.getElementById("sub_total").innerHTML = subTotal;
+    document.getElementById("total").innerHTML = total;
 
-    else if(quan == 2){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
+    if(quant < 0){
+        quant = 1;
+        subTotal = 4236;
+        total = 4286;
 
-    else if(quan == 3){
-        document.getElementById("sub_total").innerHTML = (- price)
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
+        alert("Invalid Quantity");
 
-    else if(quan == 4){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
+        document.getElementById("Quantity").innerHTML = quant;
+        document.getElementById("quantity").innerHTML = quant;
+        document.getElementById("sub_total").innerHTML = subTotal;
+        document.getElementById("total").innerHTML = total;
     }
+}
 
-    else if(quan == 5){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
+function checkOut(){
+    qty = qty + quant;
+    total_check = total;
 
-    else if(quan == 6){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
-
-    else if(quan == 7){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
-
-    else if(quan == 8){
-        document.getElementById("sub_total").innerHTML =(- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
-
-    else if(quan == 9){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
-
-    else if(quan == 10){
-        document.getElementById("sub_total").innerHTML = (- price);
-        document.getElementById("quantity").innerHTML = quan;
-        document.getElementById("total").innerHTML = (quan * price) + 50;
-    }
-
-    else if(quan < 1)
-    {
-        window.alert("Unidentified Quantity!");
-        document.getElementById("Quantity").innerHTML = 1;
-        document.getElementById("sub_total").innerHTML = 4236;
-        document.getElementById("quantity").innerHTML = 1;
-        document.getElementById("total").innerHTML = price +50;
-    }
-    
+    document.getElementById("qty").innerHTML = qty;
+    document.getElementById("total_check").innerHTML = total_check;
+    document.getElementById("checkOut").style.display = "";
+    document.getElementById("wrap").style.display = "None";
 }
